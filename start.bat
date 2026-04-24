@@ -6,11 +6,13 @@ echo   News Fact-Checking System - Local Runner
 echo ================================================
 echo 1. Install + run from current folder
 echo 2. Download (git clone) then install + run
+echo 3. Generate GitHub ZIP download link
 echo.
-set /p CHOICE=Choose option [1/2]: 
+set /p CHOICE=Choose option [1/2/3]: 
 
 if "%CHOICE%"=="1" goto run_here
 if "%CHOICE%"=="2" goto clone_and_run
+if "%CHOICE%"=="3" goto zip_link
 
 echo [ERROR] Invalid option.
 exit /b 1
@@ -66,3 +68,17 @@ call .venv\Scripts\python.exe -m news_factcheck.demo
 set "RC=%errorlevel%"
 popd
 exit /b %RC%
+
+:zip_link
+set /p REPO_URL=Enter GitHub repo URL (https://github.com/OWNER/REPO): 
+set /p REF_NAME=Enter branch/tag/commit [main]: 
+if "%REF_NAME%"=="" set "REF_NAME=main"
+
+where py >nul 2>nul
+if %errorlevel% neq 0 (
+  echo [ERROR] Python launcher (py) not found.
+  exit /b 1
+)
+
+py -3 github_download_link.py --repo "%REPO_URL%" --ref "%REF_NAME%"
+exit /b %errorlevel%

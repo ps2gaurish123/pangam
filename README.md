@@ -51,3 +51,18 @@ After setup, the starter demo executes:
 ```bat
 .venv\Scripts\python.exe -m news_factcheck.demo
 ```
+
+
+### GitHub downloadable link (ZIP)
+
+If your repository is on GitHub, generate a direct ZIP download link with:
+
+```bash
+python github_download_link.py --repo https://github.com/OWNER/REPO --ref main
+```
+
+This prints a link in this format:
+
+`https://codeload.github.com/OWNER/REPO/zip/refs/heads/main`
+
+You can also use **Option 3** in `start.bat` to generate this link interactively.
