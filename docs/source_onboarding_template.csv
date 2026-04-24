@@ -1,0 +1,4 @@
+source_name,website_url,rss_url,category,region,trust_level,scraping_method,refresh_frequency_minutes,notes
+Reuters,https://www.reuters.com,https://www.reutersagency.com/feed/?best-topics=business-finance,Business,Global,high,rss,15,Primary global wire
+Press Information Bureau India,https://pib.gov.in,,Policy,India,high,official_api_or_scrape,30,Prefer official feed endpoint
+Economic Times,https://economictimes.indiatimes.com,https://economictimes.indiatimes.com/rssfeedsdefault.cms,Business,India,medium,rss,20,Track policy/startups
