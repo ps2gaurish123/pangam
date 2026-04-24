@@ -37,5 +37,14 @@ if exist requirements.txt (
   echo [WARN] requirements.txt not found. Skipping dependency installation.
 )
 
+
+
+echo [INFO] Installing local package in editable mode...
+call "%VENV_DIR%\Scripts\python.exe" -m pip install -e .
+if %errorlevel% neq 0 (
+  echo [ERROR] Failed to install local package.
+  exit /b 1
+)
+
 echo [OK] Environment is ready.
 exit /b 0

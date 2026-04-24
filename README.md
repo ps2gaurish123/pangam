@@ -72,3 +72,14 @@ This prints a link in this format:
 `https://codeload.github.com/OWNER/REPO/zip/refs/heads/main`
 
 You can also use **Option 3** in `start.bat` to generate this link interactively (no Python required).
+
+
+## Download + install (everything included)
+
+For Windows users who want a full project download + install flow in one step:
+
+```powershell
+.\download_and_install.ps1 -Repo https://github.com/OWNER/REPO -Ref main -TargetDir news-factcheck-local
+```
+
+Also see: `INSTALL_WINDOWS.md`.

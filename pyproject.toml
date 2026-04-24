@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "news-factcheck-starter"
+version = "0.1.0"
+description = "Starter utilities for news fact-checking scoring and local demo"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  {name = "Pangam"}
+]
+
+[project.scripts]
+news-factcheck-demo = "news_factcheck.demo:main"
+
+[tool.setuptools.packages.find]
+include = ["news_factcheck*"]
