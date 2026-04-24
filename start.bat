@@ -74,11 +74,5 @@ set /p REPO_URL=Enter GitHub repo URL (https://github.com/OWNER/REPO):
 set /p REF_NAME=Enter branch/tag/commit [main]: 
 if "%REF_NAME%"=="" set "REF_NAME=main"
 
-where py >nul 2>nul
-if %errorlevel% neq 0 (
-  echo [ERROR] Python launcher (py) not found.
-  exit /b 1
-)
-
-py -3 github_download_link.py --repo "%REPO_URL%" --ref "%REF_NAME%"
+powershell -NoProfile -ExecutionPolicy Bypass -File github_download_link.ps1 -Repo "%REPO_URL%" -Ref "%REF_NAME%"
 exit /b %errorlevel%

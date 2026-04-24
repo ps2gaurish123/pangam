@@ -57,12 +57,18 @@ After setup, the starter demo executes:
 
 If your repository is on GitHub, generate a direct ZIP download link with:
 
+```powershell
+.\github_download_link.ps1 -Repo https://github.com/OWNER/REPO -Ref main
+```
+
+If Python is available, this also works:
+
 ```bash
-python github_download_link.py --repo https://github.com/OWNER/REPO --ref main
+py -3 github_download_link.py --repo https://github.com/OWNER/REPO --ref main
 ```
 
 This prints a link in this format:
 
 `https://codeload.github.com/OWNER/REPO/zip/refs/heads/main`
 
-You can also use **Option 3** in `start.bat` to generate this link interactively.
+You can also use **Option 3** in `start.bat` to generate this link interactively (no Python required).
