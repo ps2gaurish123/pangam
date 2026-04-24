@@ -1,0 +1,2 @@
+# No third-party packages are required for the scoring demo.
+# Keep this file for future dependencies and Windows install flow.
