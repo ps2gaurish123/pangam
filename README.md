@@ -91,3 +91,12 @@ Use this bootstrap command to download the installer script and run it:
 ```powershell
 Invoke-WebRequest https://raw.githubusercontent.com/OWNER/REPO/main/download_and_install.ps1 -OutFile download_and_install.ps1; .\download_and_install.ps1 -Repo https://github.com/OWNER/REPO -Ref main -TargetDir news-factcheck-local
 ```
+
+
+## Download this project
+
+If you do not see the new files on `main`, merge the PR first.
+
+- Download `main` ZIP: `https://codeload.github.com/OWNER/REPO/zip/refs/heads/main`
+- Download PR branch ZIP: `https://codeload.github.com/OWNER/REPO/zip/refs/heads/BRANCH_NAME`
+- See detailed steps: `DOWNLOAD.md`

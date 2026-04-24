@@ -1,0 +1,29 @@
+name: Package Project
+
+on:
+  push:
+    branches:
+      - main
+      - "codex/**"
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-zip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create project archive
+        run: |
+          REPO_NAME="$(basename \"$GITHUB_REPOSITORY\")"
+          SHORT_SHA="${GITHUB_SHA::7}"
+          mkdir -p dist
+          git archive --format=zip --output "dist/${REPO_NAME}-${SHORT_SHA}.zip" HEAD
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: project-zip
+          path: dist/*.zip
