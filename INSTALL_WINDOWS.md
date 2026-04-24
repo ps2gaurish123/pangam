@@ -3,10 +3,16 @@
 ## Option A (recommended): Download ZIP and install automatically
 
 1. Open PowerShell in a folder where you want the project.
-2. Run:
+2. If you already downloaded this repository, run:
 
 ```powershell
 .\download_and_install.ps1 -Repo https://github.com/OWNER/REPO -Ref main -TargetDir news-factcheck-local
+```
+
+3. If PowerShell says the script is not recognized, you are not in the project folder. Use this bootstrap one-liner instead (downloads script first):
+
+```powershell
+Invoke-WebRequest https://raw.githubusercontent.com/OWNER/REPO/main/download_and_install.ps1 -OutFile download_and_install.ps1; .\download_and_install.ps1 -Repo https://github.com/OWNER/REPO -Ref main -TargetDir news-factcheck-local
 ```
 
 This will:

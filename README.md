@@ -83,3 +83,11 @@ For Windows users who want a full project download + install flow in one step:
 ```
 
 Also see: `INSTALL_WINDOWS.md`.
+
+
+If you get `download_and_install.ps1 is not recognized`, it means your current folder does not contain that file.
+Use this bootstrap command to download the installer script and run it:
+
+```powershell
+Invoke-WebRequest https://raw.githubusercontent.com/OWNER/REPO/main/download_and_install.ps1 -OutFile download_and_install.ps1; .\download_and_install.ps1 -Repo https://github.com/OWNER/REPO -Ref main -TargetDir news-factcheck-local
+```
